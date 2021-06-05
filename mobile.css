@@ -1,4 +1,7 @@
 @media only screen and (max-width: 500px) {
+    body{
+        font-size: 14px;
+    }
     .container{
         width: 90vw;
         height: 90vh;
