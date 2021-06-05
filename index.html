@@ -11,9 +11,8 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="slider.css">
-    <link rel="stylesheet" href="toggle.css">
-    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="slider.css" />
+    <link rel="stylesheet" href="toggle.css" />
 
     <title>Frontend Mentor | Interactive pricing component</title>
 
@@ -51,7 +50,7 @@
       }
       .container {
         width: 40rem;
-        height: 80vh;
+        /* height: 80vh; */
         /* background-color: rgb(240, 240, 240); */
       }
       .title {
@@ -93,15 +92,15 @@
         font-size: 2rem;
         font-weight: 800;
       }
-      .billing{
+      .billing {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: .9rem;
+        font-size: 0.9rem;
         margin-bottom: 3rem;
       }
-      .discount{
+      .discount {
         padding: 0.2rem 0.5rem;
         border-radius: 1rem;
         font-size: 0.8rem;
@@ -109,27 +108,27 @@
         color: hsl(15, 100%, 70%);
         background-color: hsl(14, 92%, 95%);
       }
-      .discount_mobile{
+      .discount_mobile {
         display: none;
       }
-      .CTA{
+      .CTA {
         margin-top: 2rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-size: 0.8rem;
       }
-      .features{
+      .features {
         list-style: none;
       }
-      .features li{
+      .features li {
         margin-bottom: 1rem;
       }
-      .features li::before{
+      .features li::before {
         content: url(images/icon-check.svg);
         margin-right: 1rem;
       }
-      .start_cta{
+      .start_cta {
         cursor: pointer;
         color: hsl(226, 100%, 87%);
         background-color: hsl(227, 35%, 25%);
@@ -137,6 +136,49 @@
         padding: 1em 3em;
         border-radius: 2rem;
         font-family: Manrope;
+      }
+      @media only screen and (max-width: 500px) {
+        body {
+          font-size: 14px;
+        }
+        main {
+          height: 120vh;
+          padding: 0 1rem;
+        }
+        .pricing {
+          text-align: center;
+          padding: 2em 1em;
+        }
+        .offer {
+          flex-direction: column;
+        }
+        .offer .view_count {
+          width: 100%;
+          order: -2;
+        }
+        .offer .price {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+        .slider {
+          order: -1;
+        }
+        .discount_desktop {
+          display: none;
+        }
+        .discount_mobile {
+          display: block;
+        }
+        .CTA {
+          flex-direction: column;
+        }
+        .features {
+          margin-bottom: 1rem;
+        }
+        .switch{
+          margin: 0 0.2rem;
+        }
       }
     </style>
   </head>
@@ -213,7 +255,7 @@
     const slider = document.querySelector(".slider");
     const price = document.querySelector(".price span");
     const pageViews = document.querySelector(".view_count span");
-    const discountSwitch = document.querySelector(".switch input")
+    const discountSwitch = document.querySelector(".switch input");
     let pageViewsValues = {
       8: 10,
       12: 30,
@@ -223,11 +265,15 @@
     };
 
     discountSwitch.addEventListener("change", (e) => {
-      price.innerHTML = `$${discountSwitch.checked?slider.value*0.75:slider.value}.00`;
+      price.innerHTML = `$${
+        discountSwitch.checked ? slider.value * 0.75 : slider.value
+      }.00`;
     });
-    
+
     slider.addEventListener("change", (e) => {
-      price.innerHTML = `$${discountSwitch.checked?slider.value*0.75:slider.value}.00`;
+      price.innerHTML = `$${
+        discountSwitch.checked ? slider.value * 0.75 : slider.value
+      }.00`;
       pageViews.innerHTML = pageViewsValues[slider.value];
       backgroundSize = ((slider.value - 8) / 16) * 100;
       slider.style.backgroundImage = `linear-gradient(to right, hsl(174, 77%, 80%) 0%, hsl(174, 77%, 80%) ${backgroundSize}%, hsl(224, 65%, 95%) ${backgroundSize}%, hsl(224, 65%, 95%))`;

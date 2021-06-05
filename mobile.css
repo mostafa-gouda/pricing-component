@@ -2,9 +2,10 @@
     body{
         font-size: 14px;
     }
-    .container{
-        width: 90vw;
-        height: 90vh;
+    main{
+        height: 120vh;
+        align-items: center;
+        padding: 0 1rem;
     }
     .pricing{
         text-align: center;
