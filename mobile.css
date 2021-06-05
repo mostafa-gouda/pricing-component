@@ -1,0 +1,37 @@
+@media only screen and (max-width: 500px) {
+    .container{
+        width: 90vw;
+        height: 90vh;
+    }
+    .pricing{
+        text-align: center;
+        padding: 2em 1em;
+    }
+    .offer{
+        flex-direction: column;
+    }
+    .offer .view_count{
+        width: 100%;
+        order: -2;
+    }
+    .offer .price{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .slider{
+        order: -1;
+    }
+    .discount_desktop{
+        display: none;
+    }
+    .discount_mobile{
+        display: block;
+    }
+    .CTA{
+        flex-direction: column;
+    }
+    .features{
+        margin-bottom: 1rem;
+    }
+  }

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="toggle.css">
+    <link rel="stylesheet" href="mobile.css">
+
+    <title>Frontend Mentor | Interactive pricing component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 1.7rem;
+      }
+      h5 {
+        font-weight: 600;
+      }
+      .dark_blue {
+        color: hsl(227, 35%, 25%);
+      }
+      .greyish_blue {
+        color: hsl(225, 20%, 60%);
+      }
+      body {
+        font-family: Manrope;
+      }
+      main {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: hsl(230, 100%, 99%);
+        background-image: url(images/bg-pattern.svg);
+        background-repeat: no-repeat;
+        background-size: 100vw 50vh;
+      }
+      .container {
+        width: 40rem;
+        height: 80vh;
+        /* background-color: rgb(240, 240, 240); */
+      }
+      .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        background-image: url(images/pattern-circles.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        line-height: 2rem;
+        height: 10rem;
+        margin-bottom: 2rem;
+      }
+
+      .pricing {
+        border-radius: 0.3rem;
+        box-shadow: 0.2rem 0.2rem 0.5rem rgb(221, 221, 221);
+        background-color: white;
+        padding: 3em;
+      }
+      .pricing .offer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid hsl(224, 65%, 95%);
+      }
+      .offer .view_count {
+        text-transform: uppercase;
+        letter-spacing: 0.15rem;
+        width: 50%;
+      }
+      .price {
+        width: 50%;
+        text-align: right;
+      }
+      .price span {
+        font-size: 2rem;
+        font-weight: 800;
+      }
+      .billing{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: .9rem;
+        margin-bottom: 3rem;
+      }
+      .discount{
+        padding: 0.2rem 0.5rem;
+        border-radius: 1rem;
+        font-size: 0.8rem;
+        margin-left: 1rem;
+        color: hsl(15, 100%, 70%);
+        background-color: hsl(14, 92%, 95%);
+      }
+      .discount_mobile{
+        display: none;
+      }
+      .CTA{
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+      }
+      .features{
+        list-style: none;
+      }
+      .features li{
+        margin-bottom: 1rem;
+      }
+      .features li::before{
+        content: url(images/icon-check.svg);
+        margin-right: 1rem;
+      }
+      .start_cta{
+        cursor: pointer;
+        color: hsl(226, 100%, 87%);
+        background-color: hsl(227, 35%, 25%);
+        border: none;
+        padding: 1em 3em;
+        border-radius: 2rem;
+        font-family: Manrope;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="title">
+          <h1 class="dark_blue">Simple, traffic-based pricing</h1>
+          <h5 class="greyish_blue">
+            Sign-up for our 30-day trial. No credit card required.
+          </h5>
+        </div>
+        <div class="pricing">
+          <div class="offer">
+            <div class="view_count greyish_blue">
+              <span>100</span>k Pageviews
+            </div>
+            <div class="price greyish_blue">
+              <span class="dark_blue">$16.00</span> /month
+            </div>
+            <input
+              type="range"
+              min="8"
+              max="24"
+              value="16"
+              step="4"
+              class="slider"
+              id="myRange"
+            />
+            <div class="billing greyish_blue">
+              <span>Monthly Billing</span>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="toggle round"></span>
+              </label>
+              <span>Yearly Billing</span>
+              <span class="discount_desktop discount">25% discount</span>
+              <span class="discount_mobile discount">-25%</span>
+            </div>
+          </div>
+          <div class="CTA greyish_blue">
+            <ul class="features">
+              <li>Unlimited websites</li>
+              <li>100% data ownership</li>
+              <li>Email reports</li>
+            </ul>
+            <button class="start_cta">Start my trial</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Simple, traffic-based pricing
+  Sign-up for our 30-day trial. No credit card required. 
+
+  Pageviews
+  $ /month
+
+  
+  Yearly Billing 25% discount
+
+  Unlimited websites
+  100% data ownership
+  Email reports
+
+  Start my trial -->
+
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  </body>
+  <script>
+    const slider = document.querySelector(".slider");
+    const price = document.querySelector(".price span");
+    const pageViews = document.querySelector(".view_count span");
+    const discountSwitch = document.querySelector(".switch input")
+    let pageViewsValues = {
+      8: 10,
+      12: 30,
+      16: 100,
+      20: 200,
+      24: 500,
+    };
+
+    discountSwitch.addEventListener("change", (e) => {
+      price.innerHTML = `$${discountSwitch.checked?slider.value*0.75:slider.value}.00`;
+    });
+    
+    slider.addEventListener("change", (e) => {
+      price.innerHTML = `$${discountSwitch.checked?slider.value*0.75:slider.value}.00`;
+      pageViews.innerHTML = pageViewsValues[slider.value];
+      backgroundSize = ((slider.value - 8) / 16) * 100;
+      slider.style.backgroundImage = `linear-gradient(to right, hsl(174, 77%, 80%) 0%, hsl(174, 77%, 80%) ${backgroundSize}%, hsl(224, 65%, 95%) ${backgroundSize}%, hsl(224, 65%, 95%))`;
+    });
+  </script>
+</html>

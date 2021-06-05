@@ -1,0 +1,48 @@
+.offer .slider {
+    margin: 3rem 0 4rem 0;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 0.5rem;
+    background-image: linear-gradient(
+      to right,
+      hsl(174, 77%, 80%) 0%,
+      hsl(174, 77%, 80%) 50%,
+      hsl(224, 65%, 95%) 50%,
+      hsl(224, 65%, 95%)
+    );
+    border-radius: 1rem;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: hsl(174, 86%, 45%);
+    background-image: url(images/icon-slider.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 20px 20px 7px hsl(174, 77%, 80%);
+    cursor: pointer;
+  }
+
+  .slider::-moz-range-thumb {
+    appearance: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: hsl(174, 86%, 45%);
+    background-image: url(images/icon-slider.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 2px 10px;
+    cursor: pointer;
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 3rem;
+    height: 1.5rem;
+  }
